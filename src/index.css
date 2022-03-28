@@ -1,20 +1,18 @@
 .Music {
   background-color: #c48352;
-  border: 3px solid black;
-  margin: 150px 650px;
-  padding: 30px 30px;
+  margin: auto 500px;
 }
 
 .music_album {
-  color: whitesmoke;
+  color: black;
   font-family: "Lucida Console", "Courier New", monospace;
   font-size: 25px;
 }
 
 .music_artist {
-  color: whitesmoke;
+  color: black;
   font-family: "Lucida Console", "Courier New", monospace;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 #btn-submit {
@@ -25,7 +23,8 @@
   color: white;
 }
 
-img {
+.music_img {
   height: 200px;
   width: 200px;
+  padding-top: 20px;
 } 

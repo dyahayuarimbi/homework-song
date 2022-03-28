@@ -1,21 +1,22 @@
 import React from 'react';
+import data from "../data/dataAlbum";
 
-const Music=({title,artist,img})=> {
+const Music= ()=> {
     return (
         <div className="Music">
-            <center>
-            <div className='music-wrapper'>
-                <img src={img} all={title} className="music_img"/>
-
-                <h3 className="music_album">{title}</h3>
-                <h3 className="music_artist">{artist}</h3>
-            </div>
-            <div className='btn_wrapper'>
-                <input type="submit" id="btn-submit" value="Select" />
-            </div>
-            </center>
-        </div>
+            {data.map((data) => (
+                <center>
+                <div key= {data.id}>
+                    <img className="music_img" id="albumImage" src={data.album.images[0].url} alt="albumImage"/>
+                    <h1 className="music_album">{data.name}</h1>
+                    <h2 className="music_artist">{data.artists[0].name}</h2>
+                    <input type="submit" id="btn-submit" value="Select"/>
+                    <hr align="center" width="auto" height="1px" color="black" size="2"></hr>
+                </div>
+                </center>
+            ))}
+      </div>
     )
-}
+};
 
 export default Music;
