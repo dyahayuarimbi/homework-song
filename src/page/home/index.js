@@ -1,7 +1,7 @@
-import React, {useEffect,useState}from 'react'
+import React, {useEffect,useState}from 'react';
 import Card from "../../Component/Card";
 import Search from '../../Component/Search';
-import config from '../../lib/config'
+import config from '../../lib/config';
 
 const Home=()=>{
 const[accessToken, setAccessToken]=useState('');

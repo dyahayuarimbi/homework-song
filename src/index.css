@@ -1,30 +1,49 @@
-.Music {
-  background-color: #c48352;
-  margin: auto 500px;
+body {
+  margin: 0;
+  font-family: "Lucida Console", "Courier New", monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
-.music_album {
-  color: black;
-  font-family: "Lucida Console", "Courier New", monospace;
-  font-size: 25px;
+code {
+  font-family: 'Courier New', Courier, monospace;
 }
 
-.music_artist {
-  color: black;
-  font-family: "Lucida Console", "Courier New", monospace;
+.form-search_input {
+  margin: 30px 10px 20px 700px;
+  font-size: 20px;
+}
+
+.card_img{
+  width: 100%;
+}
+
+.Card{
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 10px;
+  width: 300px;
+  text-align: center;
+  background-color: rgb(233, 141, 98);
+  margin: 20px;
+}
+
+.album-card{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  font-size: 20px;
+  margin-left: 45px;
+}
+
+.card_artist {
   font-size: 15px;
 }
 
-#btn-submit {
+.btn-select{
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
   background-color: #5f3c1f;
   color: white;
 }
-
-.music_img {
-  height: 200px;
-  width: 200px;
-  padding-top: 20px;
-} 
