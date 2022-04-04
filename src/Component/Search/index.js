@@ -29,7 +29,7 @@ const onSubmit = async (e) => {
 
     return(
         <form className='form-search' onSubmit={onSubmit}>
-        <input type="text" placeholder="Search.." className='form-search_input' required onChange={ handleInput}/>
+        <input type="text" placeholder="Search.." className='form-input' required onChange={ handleInput}/>
         <button type='submit'>Search</button>
         </form>
     )
