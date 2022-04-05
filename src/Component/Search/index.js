@@ -1,6 +1,8 @@
 import React, { useState, useEffect }from 'react'
 import config from '../../lib/config'
- const Search=({accessToken,onSuccess})=>{
+import { useSelector } from 'react-redux';
+const Search= ({ onSuccess}) =>{
+  const accessToken = useSelector((state)=>state.auth.accessToken);
 
 const [text,setText] = useState('')
 const handleInput=(e)=>{
