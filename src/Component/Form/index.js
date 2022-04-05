@@ -41,12 +41,12 @@ const Form = ({ userId, uriTracks }) =>{
 
 
     return(
-        <form className="form" onSubmit={handleForm}>
-            <div className="form__content">
-                <div className="form__header">
-                    <h4 className="form__title">Create Playlist</h4>
+        <form className="Form" onSubmit={handleForm}>
+            <div className="Form-content">
+                <div className="Form-header">
+                    <h4 className="Form-title">Create Playlist</h4>
                 </div>
-                <div className="form__body">
+                <div className="Form-body">
                     <div className="title">
                         <p htmlFor="title">Title</p>
                         <input
@@ -70,7 +70,7 @@ const Form = ({ userId, uriTracks }) =>{
                         />
                     </div>
                 </div>
-                <div className="form__footer">
+                <div className="Form-footer">
                     <button className="submit">Create</button>
                 </div>
             </div>
