@@ -1,11 +1,30 @@
 import './index.css';
-import Home from "./page/home"
-function App() {
-  return (
-    <div className="App">
-     <Home/>
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import CreatePlayList from "./page/createPlaylist";
+import Login from "./page/login";
+import {useSelector} from 'react-redux';
 
-    </div>
+function App() {
+  const isLogin = useSelector(state => state.auth.isLogin);
+
+  return (
+    <Router>
+      
+    
+    <Switch>
+      <Route path={"/create-playlist"}>
+        {isLogin ? (
+          <CreatePlayList />
+        ):(
+          <Redirect to={"/"}/>
+      )}
+      </Route>
+      <Route path={"/"} >
+        <Login/>
+      </Route>
+    </Switch>
+    
+  </Router>
   );
 }
 
