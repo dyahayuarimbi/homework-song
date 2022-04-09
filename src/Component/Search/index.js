@@ -1,6 +1,7 @@
-import React, { useState, useEffect }from 'react'
-import config from '../../lib/config'
-import { useSelector } from 'react-redux';
+import React, { useState } from "react";
+import config from "../../lib/config";
+import { useSelector } from "react-redux";
+
 const Search= ({ onSuccess}) =>{
   const accessToken = useSelector((state)=>state.auth.accessToken);
 
@@ -36,6 +37,5 @@ const onSubmit = async (e) => {
         </form>
     )
     }
- 
 
- export default Search
+ export default Search;

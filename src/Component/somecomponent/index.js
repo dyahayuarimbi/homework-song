@@ -1,6 +1,6 @@
 const AlbumImage = ({ src, children }) => (
     <div>
-      <img src={src} width="300" height="300" className="rotate" />
+      <img src={src} width="300" height="300" alt="gambar" className="rotate" />
       {children}
     </div>
   );

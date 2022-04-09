@@ -1,11 +1,11 @@
-import React, { useEffect,useState }from 'react'
-import Card from '../../Component/Card';
-import Search from '../../Component/Search';
-import config from '../../lib/config/index'
-import { getUserProfile } from '../../lib/fetchApi/index';
-import Form from '../../Component/Form';
-import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../../reducer/authReducer';
+import React, { useEffect, useState } from "react";
+import Card from "../../Component/Card";
+import Search from "../../Component/Search";
+import config from "../../lib/config/index";
+import { getUserProfile } from "../../lib/fetchApi/index";
+import Form from "../../Component/Form";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../../reducer/authReducer";
 
 const Home=()=>{
 
@@ -23,7 +23,6 @@ const dispatch = useDispatch();
     if (accessTokenParams !== null) {
       dispatch(login(accessTokenParams))
       
-
       const setUserProfile = async () => {
         try {
           const response = await getUserProfile(accessTokenParams);
@@ -36,7 +35,7 @@ const dispatch = useDispatch();
 
       setUserProfile();
     }
-  }, []); 
+  }, ); 
 
   useEffect(() => {
     if (!isInSearch) {
@@ -44,7 +43,6 @@ const dispatch = useDispatch();
     }
   }, [selectedTracksUri, selectedTracks, isInSearch]);
 
-  
   const onSuccessSearch = (searchTracks) => {
     setIsInSearch(true);
 
@@ -75,8 +73,7 @@ const dispatch = useDispatch();
       setSelectedTracks([...selectedTracks, track]);
     }
   }
- 
-  
+   
   return (
     <div className="home">
       {!isLogin && (

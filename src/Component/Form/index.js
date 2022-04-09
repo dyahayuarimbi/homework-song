@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { addTracksToPlaylist, createPlaylist } from '../../lib/fetchApi';
-
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { addTracksToPlaylist, createPlaylist } from "../../lib/fetchApi";
 
 const sendFormNetworkCall = (data) => console.log(data);
 
@@ -12,8 +11,7 @@ const Form = ({ uriTracks }) =>{
         title:'',
         description:''
     });
-
-    
+ 
     const handleForm = async (e) =>{
         e.preventDefault();
         sendFormNetworkCall(form);
@@ -39,7 +37,6 @@ const Form = ({ uriTracks }) =>{
         setForm({...form, [name]:value});
         console.log(form);
     };
-
 
     return(
         <form className="Form" onSubmit={handleForm}>

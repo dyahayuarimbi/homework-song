@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
-import {useDispatch} from 'react-redux';
+import {useDispatch} from "react-redux";
 import { useHistory } from "react-router-dom";
 import config from "../../lib/config";
 import { login } from "../../reducer/authReducer";
-
 
 const Login =()=>{
     const dispatch = useDispatch();
@@ -38,7 +37,7 @@ const Login =()=>{
 
         setUserProfile();
       }
-    }, []);
+    }, );
 
     const generateSpotifyLinkAuthorize=()=>{
    
@@ -52,4 +51,5 @@ const Login =()=>{
       </div>
     )
 }
+
 export default Login;
