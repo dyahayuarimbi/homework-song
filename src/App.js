@@ -1,4 +1,3 @@
-import "./index.css";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import CreatePlayList from "./page/createPlaylist";
 import Login from "./page/login";
