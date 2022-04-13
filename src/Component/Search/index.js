@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import config from "../../lib/config";
 import { useSelector } from "react-redux";
+import Button from '@mui/material/Button';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { purple } from '@mui/material/colors';
+import TextField from '@mui/material/TextField';
+import "./index.css";
 
 const Search= ({ onSuccess}) =>{
   const accessToken = useSelector((state)=>state.auth.accessToken);
@@ -30,10 +35,21 @@ const onSubmit = async (e) => {
     }
 }
 
+const theme = createTheme({
+  Search: {
+    Search: {
+      // Purple and green play nicely together.
+      main: purple[500],
+    },
+  },
+});
+
     return(
         <form className='form-search' onSubmit={onSubmit}>
-        <input type="text" placeholder="Search.." className='form-input' required onChange={ handleInput}/>
-        <button type='submit'>Search</button>
+        <TextField id="outlined-basic" label="Search Artist or Song" className='form-input' onChange={handleInput}/>
+        <ThemeProvider theme={theme}>
+          <Button type="submit" variant="contained" className="search-form">Search</Button>
+        </ThemeProvider>
         </form>
     )
     }

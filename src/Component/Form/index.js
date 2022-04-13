@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { addTracksToPlaylist, createPlaylist } from "../../lib/fetchApi";
+import Button from '@mui/material/Button';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { purple } from '@mui/material/colors';
 
 const sendFormNetworkCall = (data) => console.log(data);
 
@@ -38,6 +41,15 @@ const Form = ({ uriTracks }) =>{
         console.log(form);
     };
 
+    const theme = createTheme({
+        Create: {
+          Create: {
+            // Purple and green play nicely together.
+            main: purple[500],
+          },
+        },
+      });
+
     return(
         <form className="Form" onSubmit={handleForm}>
             <div className="Form-content">
@@ -69,7 +81,9 @@ const Form = ({ uriTracks }) =>{
                     </div>
                 </div>
                 <div className="Form-footer">
-                    <button className="submit">Create</button>
+                <ThemeProvider theme={theme}>
+                    <Button type="submit" variant="contained">Create</Button>
+                </ThemeProvider>
                 </div>
             </div>
         </form>
