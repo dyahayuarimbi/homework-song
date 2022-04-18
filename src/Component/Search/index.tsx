@@ -1,20 +1,26 @@
-import React, { useState } from "react";
+import React, { ChangeEventHandler, FormEventHandler, useState } from "react";
 import config from "../../lib/config";
 import { useSelector } from "react-redux";
 import Button from '@mui/material/Button';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { purple } from '@mui/material/colors';
 import TextField from '@mui/material/TextField';
 import "./index.css";
+import { TRootState } from "../../store";
 
-const Search= ({ onSuccess}) =>{
-  const accessToken = useSelector((state)=>state.auth.accessToken);
+interface Iprops {
+  onSuccess:(tracks:any[], text:string)=>void;
 
-const [text,setText] = useState('')
-const handleInput=(e)=>{
-    setText(e.target.value)
 }
-const onSubmit = async (e) => {
+
+const Search : React.FC<Iprops> = ({ onSuccess }) => {
+    const accessToken: string = useSelector((state:TRootState) => state.auth.accessToken);
+
+    const [text, setText] = useState<string>("");
+
+    const handleInput: ChangeEventHandler<HTMLInputElement> = (e) => {
+    setText(e.target.value)
+};
+
+const onSubmit:FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
 
     const requestOptions = {
@@ -29,27 +35,16 @@ const onSubmit = async (e) => {
         .then((data) => data.json());
 
       const tracks = response.tracks.items;
-      onSuccess(tracks);
+      onSuccess(tracks,text);
     } catch (e) {
       alert(e);
     }
 }
 
-const theme = createTheme({
-  Search: {
-    Search: {
-      // Purple and green play nicely together.
-      main: purple[500],
-    },
-  },
-});
-
-    return(
+    return (
         <form className='form-search' onSubmit={onSubmit}>
         <TextField id="outlined-basic" label="Search Artist or Song" className='form-input' onChange={handleInput}/>
-        <ThemeProvider theme={theme}>
-          <Button type="submit" variant="contained" className="search-form">Search</Button>
-        </ThemeProvider>
+        <Button type="submit" variant="contained" className="search-form">Search</Button>
         </form>
     )
     }

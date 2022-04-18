@@ -2,10 +2,18 @@ import React, { useState } from "react";
 import "./index.css";
 import Button from '@mui/material/Button';
 
-const Card=({ title, artist, img, album, toggleSelect })=> {
-  const [isSelected, setIsSelected] = useState(false);
+interface Iprops{
+  img: string,
+  title: string,
+  artist: string,
+  album: string,
+  toggleSelect :()=>void;
+}
 
-  const handleToggleSelect = () => {
+const Card : React.FC<Iprops>= ({ title, artist, img, album, toggleSelect })=> {
+  const [isSelected, setIsSelected] = useState<boolean>(false);
+
+  const handleToggleSelect : () =>void=()=> {
   setIsSelected(!isSelected)
   toggleSelect()
 };
