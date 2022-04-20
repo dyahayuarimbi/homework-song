@@ -42,7 +42,7 @@ const onSubmit:FormEventHandler<HTMLFormElement> = async (e) => {
 }
 
     return (
-        <form className='form-search' onSubmit={onSubmit}>
+        <form data-testid="SearchBarForm" className='form-search' onSubmit={onSubmit}>
         <TextField id="outlined-basic" label="Search Artist or Song" className='form-input' onChange={handleInput}/>
         <Button type="submit" variant="contained" className="search-form">Search</Button>
         </form>

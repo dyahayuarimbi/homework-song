@@ -32,7 +32,7 @@ const CreatePlayList = () =>{
     return(
         <div className="home">
             <div className='create-playlist'>
-              <Form  uriTracks={selected}/>  
+              <Form  uriTracks={selected}/>
             </div>
           <div className='search-bar'>
             <Search  onSuccess={(tracks) => onSuccessSearch(tracks)}/>

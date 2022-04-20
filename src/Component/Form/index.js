@@ -66,7 +66,8 @@ const Form = ({ uriTracks }) =>{
                             name='title' 
                             value={form.title} 
                             onChange={handleChange}
-                            required 
+                            required
+                            data-testid="titleplaylist" 
                         />
                     </div>
                     <div className="desc">
@@ -76,7 +77,8 @@ const Form = ({ uriTracks }) =>{
                             type="text" 
                             name='description' 
                             value={form.description} 
-                            onChange={handleChange}  
+                            onChange={handleChange} 
+                            data-testid="descriptionplaylist" 
                         />
                     </div>
                 </div>
